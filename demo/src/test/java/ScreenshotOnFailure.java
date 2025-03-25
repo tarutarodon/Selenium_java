@@ -13,12 +13,12 @@ import java.util.Optional; // JavaのOptionalクラス。値が存在するか�
 public class ScreenshotOnFailure implements TestWatcher { // テスト失敗時にスクリーンショットを撮影するクラス。TestWatcherを実装。
 
     private final WebDriver driver; // WebDriverインスタンス（ブラウザ操作用）。
-
+        
     // コンストラクタ: WebDriverを受け取り初期化
     public ScreenshotOnFailure(WebDriver driver) {
         this.driver = driver;
     }
-
+    
     @Override
     public void testFailed(ExtensionContext context, Throwable cause) { // テスト失敗時に呼び出されるメソッド
         try {
@@ -37,6 +37,10 @@ public class ScreenshotOnFailure implements TestWatcher { // テスト失敗時�
         } catch (Exception e) { // 例外発生時の処理
             e.printStackTrace(); // スタックトレースを出力
         }
+
+        System.out.println("This method is over!!");
+        System.out.println("This method is over!!");
+        System.out.println("This method is over!!");
     }
 
     @Override

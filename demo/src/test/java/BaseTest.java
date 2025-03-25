@@ -21,10 +21,10 @@ public class BaseTest { // テストの基盤となるクラス。
     @AfterEach // 各テストメソッドが終了した後に実行されるメソッド。
     public void tearDown(TestInfo testInfo) {
         if (driver != null) { // driverがnullでない場合のみ終了処理を実行。
-            driver.quit(); // ブラウザを閉じて、WebDriverのリソースを解放する
-            if (testInfo.getTags().contains("fail_screenshot")) { 
+            if (testInfo.getTags().contains("fail_screenshot")) {
                 watcher.testFailed(null, new Throwable("スクリーンショット撮影")); // 明示的に呼ぶ
             }
+            driver.quit(); // ブラウザを閉じて、WebDriverのリソースを解放する
         }
     }
 }
